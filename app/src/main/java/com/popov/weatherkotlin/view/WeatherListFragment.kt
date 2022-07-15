@@ -50,8 +50,9 @@ class WeatherListFragment : Fragment() {
             is AppState.Success -> {
                 val result = appState.weatherDate
                 binding.cityName.text = result.city.name
-                binding.temperatureValue.text = result.temperature.toString
-                binding.temperatureLabel.text = result.feelsLike.toString
+                binding.temperatureValue.text = result.temperature.toString()
+                binding.temperatureLabel.text = result.feelsLike.toString()
+                binding.cityCoordinates.text = "${result.city.lat}/${result.city.lon}"
             }
         }
     }

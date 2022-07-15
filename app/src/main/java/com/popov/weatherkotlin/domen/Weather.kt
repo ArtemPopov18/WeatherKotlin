@@ -2,8 +2,8 @@ package com.popov.weatherkotlin.domen
 
 data class Weather(
     val city: City = getDefaultCity(),
-    val temperature: Int = 20,
-    val feelsLike: Int = 20
+    val temperature: Int = 15,
+    val feelsLike: Int = 15
 )
 
 data class City(
