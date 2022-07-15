@@ -1,8 +1,9 @@
 package com.popov.weatherkotlin
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import com.popov.weatherkotlin.databinding.ActivityMainBinding
+import com.popov.weatherkotlin.view.WeatherListFragment
 
 class MainActivity : AppCompatActivity() {
 
@@ -11,5 +12,10 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        if (savedInstanceState == null) {
+            supportFragmentManager.beginTransaction()
+                .replace(R.id.container, WeatherListFragment.newInstance()).commit()
+        }
     }
 }
